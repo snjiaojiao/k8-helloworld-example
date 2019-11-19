@@ -1,0 +1,5 @@
+serverGroup: group_c
+image:
+  repository: 089320316196.dkr.ecr.us-west-1.amazonaws.com/helloworld
+imageTag: v2
+version: v2
