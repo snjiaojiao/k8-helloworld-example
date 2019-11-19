@@ -32,10 +32,11 @@ kops create cluster --zones=<zone> <cluster-name>
 This will create a defualt clouster configuration for you, you can modify it if you want.
 
 Step4: Create the clouster on AWS
-kops update cluster <cluster-name> --yest
-
+   Before update the clouster we need to create secret for ssh into the master and node servers:
+   kops create secret --name <clustername> sshpublickey admin -i ~/.ssh/<pub_key> --state=s3://<s3_bucketname>
+   Setup the cluster:
+   kops update cluster <cluster-name> --yes
 For more reference please got to: https://kubernetes.io/docs/setup/production-environment/tools/kops/
-
 
 Part2: install istio to your cluster (there are multiple ways to install istio,i am using helm template here)
 1. Download istio release https://istio.io/docs/setup/getting-started/#download
